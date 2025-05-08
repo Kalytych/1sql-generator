@@ -10,7 +10,8 @@ public class HikariUtil {
 
   static {
     HikariConfig config = new HikariConfig();
-    config.setJdbcUrl("jdbc:sqlite:identifier.sqlite");
+    config.setJdbcUrl("jdbc:sqlite:C:/Users/kalyt/DataGripProjects/sql_generator/identifier.sqlite");
+
     config.setMaximumPoolSize(5);
     dataSource = new HikariDataSource(config);
   }

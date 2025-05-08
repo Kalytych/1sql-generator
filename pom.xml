@@ -1,74 +1,59 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
-                             http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
+<dependencies>
+  <!-- SQLite JDBC Driver -->
+  <dependency>
+    <groupId>org.xerial</groupId>
+    <artifactId>sqlite-jdbc</artifactId>
+    <version>3.43.0.0</version>
+  </dependency>
 
-  <groupId>com.example</groupId>
-  <artifactId>my-super-project</artifactId>
-  <version>1.0-SNAPSHOT</version>
+  <!-- Lombok -->
+  <dependency>
+    <groupId>org.projectlombok</groupId>
+    <artifactId>lombok</artifactId>
+    <version>1.18.30</version>
+    <scope>provided</scope>
+  </dependency>
 
-  <properties>
-    <maven.compiler.source>17</maven.compiler.source>
-    <maven.compiler.target>17</maven.compiler.target>
-  </properties>
+  <!-- HikariCP (Connection Pool) -->
+  <dependency>
+    <groupId>com.zaxxer</groupId>
+    <artifactId>HikariCP</artifactId>
+    <version>5.0.1</version>
+  </dependency>
 
-  <repositories>
-    <repository>
-      <id>central</id>
-      <url>https://repo.maven.apache.org/maven2</url>
-    </repository>
-  </repositories>
+  <!-- JUnit 5 (Jupiter API) -->
+  <dependency>
+    <groupId>org.junit.jupiter</groupId>
+    <artifactId>junit-jupiter</artifactId>
+    <version>5.10.0</version>
+    <scope>test</scope>
+  </dependency>
 
-  <dependencies>
-    <!-- SQLite JDBC Driver -->
-    <dependency>
-      <groupId>org.xerial</groupId>
-      <artifactId>sqlite-jdbc</artifactId>
-      <version>3.43.0.0</version>
-    </dependency>
+  <!-- Bcrypt -->
+  <dependency>
+    <groupId>at.favre.lib</groupId>
+    <artifactId>bcrypt</artifactId>
+    <version>0.9.0</version>
+  </dependency>
 
-    <!-- Lombok -->
-    <dependency>
-      <groupId>org.projectlombok</groupId>
-      <artifactId>lombok</artifactId>
-      <version>1.18.30</version>
-      <scope>provided</scope>
-    </dependency>
+  <!-- Email -->
+  <dependency>
+    <groupId>com.sun.mail</groupId>
+    <artifactId>jakarta.mail</artifactId>
+    <version>2.0.1</version>
+  </dependency>
 
-    <!-- HikariCP (Connection Pool) -->
-    <dependency>
-      <groupId>com.zaxxer</groupId>
-      <artifactId>HikariCP</artifactId>
-      <version>5.0.1</version>
-    </dependency>
+  <!-- SLF4J API -->
+  <dependency>
+    <groupId>org.slf4j</groupId>
+    <artifactId>slf4j-api</artifactId>
+    <version>2.0.9</version>
+  </dependency>
 
-    <!-- JUnit 5 (Jupiter API) -->
-    <dependency>
-      <groupId>org.junit.jupiter</groupId>
-      <artifactId>junit-jupiter</artifactId>
-      <version>5.10.0</version>
-      <scope>test</scope>
-    </dependency>
-
-
-  </dependencies>
-
-  <build>
-    <plugins>
-      <!-- Spotless plugin for formatting -->
-      <plugin>
-        <groupId>com.diffplug.spotless</groupId>
-        <artifactId>spotless-maven-plugin</artifactId>
-        <version>2.44.0</version>
-        <executions>
-          <execution>
-            <goals>
-              <goal>apply</goal>
-            </goals>
-          </execution>
-        </executions>
-      </plugin>
-    </plugins>
-  </build>
-</project>
+  <!-- SLF4J Simple Implementation -->
+  <dependency>
+    <groupId>org.slf4j</groupId>
+    <artifactId>slf4j-simple</artifactId>
+    <version>2.0.9</version>
+  </dependency>
+</dependencies>
