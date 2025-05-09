@@ -3,8 +3,10 @@ package com.example;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
+import lombok.Data;
 
 public class UserRepository {
+
 
   public List<User> findAll() {
     List<User> users = new ArrayList<>();
@@ -14,7 +16,7 @@ public class UserRepository {
 
       while (rs.next()) {
         User user = new User();
-        user.setId(rs.getInt("user_id"));
+        user.setId(rs.getLong("user_id"));
         user.setUsername(rs.getString("username"));
         user.setEmail(rs.getString("email"));
         user.setPassword(rs.getString("password_hash"));
@@ -35,7 +37,7 @@ public class UserRepository {
       try (ResultSet rs = stmt.executeQuery()) {
         if (rs.next()) {
           User user = new User();
-          user.setId(rs.getInt("user_id"));
+          user.setId(rs.getLong("user_id"));
           user.setUsername(rs.getString("username"));
           user.setEmail(rs.getString("email"));
           user.setPassword(rs.getString("password_hash"));

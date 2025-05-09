@@ -8,7 +8,7 @@ public class HashUtil {
     return BCrypt.withDefaults().hashToString(12, password.toCharArray());
   }
 
-  public static boolean matches(String password, String hashedPassword) {
+  public boolean matches(String password, String hashedPassword) {
     return BCrypt.verifyer().verify(password.toCharArray(), hashedPassword).verified;
   }
 }

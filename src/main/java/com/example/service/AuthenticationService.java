@@ -15,8 +15,10 @@ public class AuthenticationService {
 
   public boolean login(String email, String password) {
     User user = userRepository.findByEmail(email);
-    return user != null && HashUtil.matches(password, user.getPassword());
-
+    if (user == null) {
+      return false;
+    }
+    return hashUtil.matches(password, user.getPassword());
   }
 }
 

@@ -6,12 +6,15 @@ public class HashTest {
   public static void main(String[] args) {
     String password = "123456";
 
-    // Хешуємо пароль
-    String hashed = HashUtil.hash(password);
+    // Створюємо об'єкт HashUtil
+    HashUtil hashUtil = new HashUtil();
+
+    // Хешуємо пароль (припускаємо, що метод hash теж нестатичний)
+    String hashed = hashUtil.hash(password);
     System.out.println("Хеш: " + hashed);
 
     // Перевіряємо правильність
-    boolean matches = HashUtil.matches(password, hashed);
+    boolean matches = hashUtil.matches(password, hashed);
     System.out.println("Пароль збігається: " + matches);
   }
 }

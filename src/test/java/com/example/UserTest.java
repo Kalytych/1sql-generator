@@ -8,7 +8,7 @@ class UserTest {
   @Test
   void testSetAndGet() {
     User user = new User();
-    user.setId(1);
+    user.setId(1L);
     user.setUsername("testuser");
     user.setEmail("test@example.com");
     user.setPassword("1234");
