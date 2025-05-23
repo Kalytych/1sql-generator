@@ -72,7 +72,7 @@
   <!-- SLF4J API -->
   <dependency>
     <groupId>org.slf4j</groupId>
-    <artifactId>slf4j-api</artifactId>c.kalytych.vasyl@student.uzhnu.edu.ua
+    <artifactId>slf4j-api</artifactId>
     <version>2.0.13</version>
   </dependency>
 
@@ -130,12 +130,28 @@
       <version>2.0.13</version> <!-- або актуальну версію -->
     </dependency>
 
+    <dependency>
+      <groupId>ch.qos.logback</groupId>
+      <artifactId>logback-classic</artifactId>
+      <version>1.2.6</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.openjfx</groupId>
+      <artifactId>javafx-controls</artifactId>
+      <version>20.0.2</version>
+    </dependency>
+    <dependency>
+      <groupId>org.openjfx</groupId>
+      <artifactId>javafx-fxml</artifactId>
+      <version>20.0.2</version>
+    </dependency>
 
   </dependencies>
 
   <build>
     <plugins>
-      <!-- Spotless plugin for formatting -->
+      <!-- Spotless (форматування коду) -->
       <plugin>
         <groupId>com.diffplug.spotless</groupId>
         <artifactId>spotless-maven-plugin</artifactId>
@@ -144,6 +160,45 @@
           <execution>
             <goals>
               <goal>apply</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-jar-plugin</artifactId>
+        <version>3.3.0</version>
+        <configuration>
+          <archive>
+            <manifest>
+              <mainClass>com.example.UI.MainApp</mainClass>
+            </manifest>
+          </archive>
+        </configuration>
+      </plugin>
+
+      <!-- 📦 Assembly plugin для fat-jar -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-assembly-plugin</artifactId>
+        <version>3.3.0</version>
+        <configuration>
+          <descriptorRefs>
+            <descriptorRef>jar-with-dependencies</descriptorRef>
+          </descriptorRefs>
+          <archive>
+            <manifest>
+              <mainClass>com.example.Main</mainClass> <!-- 🔁 заміни на свій головний клас -->
+            </manifest>
+          </archive>
+        </configuration>
+        <executions>
+          <execution>
+            <id>make-assembly</id>
+            <phase>package</phase>
+            <goals>
+              <goal>single</goal>
             </goals>
           </execution>
         </executions>
